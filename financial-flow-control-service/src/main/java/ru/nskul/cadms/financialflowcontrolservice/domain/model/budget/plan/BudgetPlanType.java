@@ -1,4 +1,4 @@
-package ru.nskul.cadms.financialflowcontrolservice.domain.budget.plan;
+package ru.nskul.cadms.financialflowcontrolservice.domain.model.budget.plan;
 
 /**
  * Тип плана бюджета.

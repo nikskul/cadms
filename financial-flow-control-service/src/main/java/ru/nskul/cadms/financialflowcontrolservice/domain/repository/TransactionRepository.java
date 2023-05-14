@@ -1,7 +1,7 @@
-package ru.nskul.cadms.financialflowcontrolservice.data.repository;
+package ru.nskul.cadms.financialflowcontrolservice.domain.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.nskul.cadms.financialflowcontrolservice.domain.transaction.Transaction;
+import ru.nskul.cadms.financialflowcontrolservice.domain.model.transaction.Transaction;
 
 import java.util.UUID;
 

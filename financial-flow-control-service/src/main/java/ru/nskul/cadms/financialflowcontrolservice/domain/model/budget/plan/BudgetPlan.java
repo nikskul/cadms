@@ -1,4 +1,4 @@
-package ru.nskul.cadms.financialflowcontrolservice.domain.budget.plan;
+package ru.nskul.cadms.financialflowcontrolservice.domain.model.budget.plan;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
@@ -6,8 +6,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.SuperBuilder;
-import ru.nskul.cadms.financialflowcontrolservice.domain.BaseDomainEntity;
-import ru.nskul.cadms.financialflowcontrolservice.domain.user.User;
+import ru.nskul.cadms.financialflowcontrolservice.domain.model.BaseDomainEntity;
+import ru.nskul.cadms.financialflowcontrolservice.domain.model.user.User;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

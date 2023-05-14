@@ -1,4 +1,4 @@
-package ru.nskul.cadms.financialflowcontrolservice.domain.loan;
+package ru.nskul.cadms.financialflowcontrolservice.domain.model.loan;
 
 /**
  * Статус займа.

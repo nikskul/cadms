@@ -1,8 +1,7 @@
-package ru.nskul.cadms.financialflowcontrolservice.data.repository;
+package ru.nskul.cadms.financialflowcontrolservice.domain.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.nskul.cadms.financialflowcontrolservice.domain.financial.report.FinancialReport;
-import ru.nskul.cadms.financialflowcontrolservice.domain.user.User;
+import ru.nskul.cadms.financialflowcontrolservice.domain.model.financial.report.FinancialReport;
 
 import java.util.UUID;
 

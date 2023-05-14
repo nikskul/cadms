@@ -1,4 +1,4 @@
-package ru.nskul.cadms.financialflowcontrolservice.domain.transaction;
+package ru.nskul.cadms.financialflowcontrolservice.domain.model.transaction;
 
 /**
  * Типы транзакции.

@@ -1,4 +1,4 @@
-package ru.nskul.cadms.financialflowcontrolservice.domain;
+package ru.nskul.cadms.financialflowcontrolservice.domain.model;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

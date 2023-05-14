@@ -1,10 +1,10 @@
-package ru.nskul.cadms.financialflowcontrolservice.domain.transaction;
+package ru.nskul.cadms.financialflowcontrolservice.domain.model.transaction;
 
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.SuperBuilder;
-import ru.nskul.cadms.financialflowcontrolservice.domain.BaseDomainEntity;
-import ru.nskul.cadms.financialflowcontrolservice.domain.user.User;
+import ru.nskul.cadms.financialflowcontrolservice.domain.model.BaseDomainEntity;
+import ru.nskul.cadms.financialflowcontrolservice.domain.model.user.User;
 
 import java.math.BigDecimal;
 import java.time.Instant;

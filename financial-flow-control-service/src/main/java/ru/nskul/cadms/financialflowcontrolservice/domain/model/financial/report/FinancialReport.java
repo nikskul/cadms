@@ -1,10 +1,10 @@
-package ru.nskul.cadms.financialflowcontrolservice.domain.financial.report;
+package ru.nskul.cadms.financialflowcontrolservice.domain.model.financial.report;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.SuperBuilder;
-import ru.nskul.cadms.financialflowcontrolservice.domain.BaseDomainEntity;
+import ru.nskul.cadms.financialflowcontrolservice.domain.model.BaseDomainEntity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
