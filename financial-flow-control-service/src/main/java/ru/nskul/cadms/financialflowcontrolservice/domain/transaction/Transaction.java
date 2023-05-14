@@ -1,7 +1,6 @@
 package ru.nskul.cadms.financialflowcontrolservice.domain.transaction;
 
 import jakarta.persistence.*;
-import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.SuperBuilder;
 import ru.nskul.cadms.financialflowcontrolservice.domain.BaseDomainEntity;
