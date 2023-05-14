@@ -1,1 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/financial-flow-control
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: postgres
+  hibernate:
+    ddl-auto: "update"
 
+server:
+  port: 8091
