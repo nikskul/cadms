@@ -1,17 +1,16 @@
 package ru.nskul.cadms.financialflowcontrolservice.domain.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
+import org.hibernate.annotations.UuidGenerator;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.annotation.Version;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.Instant;
 import java.util.UUID;
@@ -20,15 +19,17 @@ import java.util.UUID;
 @Setter
 @SuperBuilder
 @MappedSuperclass
+@NoArgsConstructor
 @EqualsAndHashCode
+@EntityListeners(AuditingEntityListener.class)
 public abstract class BaseDomainEntity {
 
     /**
      * Идентификатор сущности.
      */
     @Id
-    @GeneratedValue(generator = "UUIDGenerator",
-    strategy = GenerationType.UUID)
+    @GeneratedValue
+    @UuidGenerator
     protected UUID id;
 
     /**

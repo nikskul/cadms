@@ -2,6 +2,8 @@ package ru.nskul.cadms.financialflowcontrolservice.domain.model.transaction;
 
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import ru.nskul.cadms.financialflowcontrolservice.domain.model.BaseDomainEntity;
 import ru.nskul.cadms.financialflowcontrolservice.domain.model.user.User;
@@ -13,6 +15,8 @@ import java.time.Instant;
  * Модель транзакции.
  */
 @Entity
+@Getter
+@Setter
 @SuperBuilder(setterPrefix = "with")
 @EqualsAndHashCode(callSuper = true)
 @Table(name = "transactions")
@@ -42,7 +46,7 @@ public final class Transaction extends BaseDomainEntity {
     /**
      * Пользователь.
      */
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH,CascadeType.MERGE})
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
 }

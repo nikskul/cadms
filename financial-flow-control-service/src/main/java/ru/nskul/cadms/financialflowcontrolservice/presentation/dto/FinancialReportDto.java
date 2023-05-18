@@ -1,35 +1,33 @@
-package ru.nskul.cadms.financialflowcontrolservice.domain.model.financial.report;
+package ru.nskul.cadms.financialflowcontrolservice.presentation.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
-import ru.nskul.cadms.financialflowcontrolservice.domain.model.BaseDomainEntity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /**
- * Модель финансового отчета.
+ * DTO финансового отчета.
  */
-@Entity
-@Getter
-@Setter
-@SuperBuilder(setterPrefix = "with")
+@Data
+@SuperBuilder
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-@Table(name = "financial_reports")
-public final class FinancialReport extends BaseDomainEntity {
+public final class FinancialReportDto extends BaseDomainDto {
 
     /**
      * Начало периода отчета.
      */
+    @JsonFormat(pattern = "dd.MM.yyyy")
     private LocalDate startDate;
 
     /**
      * Конец периода отчета.
      */
+    @JsonFormat(pattern = "dd.MM.yyyy")
     private LocalDate endDate;
 
     /**
@@ -67,5 +65,4 @@ public final class FinancialReport extends BaseDomainEntity {
      * {@summary netWorth = totalAssets - totalLiabilities}
      */
     private BigDecimal netWorth;
-
 }

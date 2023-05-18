@@ -6,7 +6,6 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.containers.PostgreSQLContainer;
-import org.testcontainers.junit.jupiter.Container;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -14,9 +13,8 @@ import static org.assertj.core.api.Assertions.assertThat;
     webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
 )
 @ActiveProfiles("test")
-public class BaseIntegrationTest {
+class BaseIntegrationTest {
 
-    @Container
     @SuppressWarnings({"AutoClosable", "resource"})
     static final PostgreSQLContainer<?> postgresContainer = new PostgreSQLContainer<>(
         "postgres:15-alpine"

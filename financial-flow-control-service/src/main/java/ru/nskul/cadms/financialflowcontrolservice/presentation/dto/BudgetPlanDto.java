@@ -1,23 +1,23 @@
-package ru.nskul.cadms.financialflowcontrolservice.domain.model.budget.plan;
+package ru.nskul.cadms.financialflowcontrolservice.presentation.dto;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
-import ru.nskul.cadms.financialflowcontrolservice.domain.model.BaseDomainEntity;
-import ru.nskul.cadms.financialflowcontrolservice.domain.model.user.User;
+import ru.nskul.cadms.financialflowcontrolservice.domain.model.budget.plan.BudgetPlanType;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-@Entity
-@Getter
-@Setter
-@SuperBuilder(setterPrefix = "with")
+/**
+ * DTO плана бюджета.
+ */
+@Data
+@SuperBuilder
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-@Table(name = "budget_plans")
-public final class BudgetPlan extends BaseDomainEntity {
+public final class BudgetPlanDto extends BaseDomainDto {
 
     /**
      * Название плана.
@@ -37,17 +37,17 @@ public final class BudgetPlan extends BaseDomainEntity {
     /**
      * Сумма планируемых расходов/доходов.
      */
+    @JsonFormat(pattern = "dd.MM.yyyy")
     private LocalDate startDate;
 
     /**
      * Сумма планируемых расходов/доходов.
      */
+    @JsonFormat(pattern = "dd.MM.yyyy")
     private LocalDate endDate;
 
     /**
      * Пользователь.
      */
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH,CascadeType.MERGE})
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private User user;
+    private UserDto user;
 }

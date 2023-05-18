@@ -6,7 +6,7 @@ import ru.nskul.cadms.financialflowcontrolservice.domain.model.financial.report.
 import java.util.UUID;
 
 /**
- * Репозиторий финансовызх отчетов.
+ * Репозиторий финансовых отчетов.
  */
 public interface FinancialReportRepository extends JpaRepository<FinancialReport, UUID> {
 }

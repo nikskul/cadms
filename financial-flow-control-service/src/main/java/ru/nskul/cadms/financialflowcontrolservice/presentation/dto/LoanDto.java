@@ -1,28 +1,23 @@
-package ru.nskul.cadms.financialflowcontrolservice.domain.model.loan;
+package ru.nskul.cadms.financialflowcontrolservice.presentation.dto;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-import ru.nskul.cadms.financialflowcontrolservice.domain.model.BaseDomainEntity;
-import ru.nskul.cadms.financialflowcontrolservice.domain.model.user.User;
+import ru.nskul.cadms.financialflowcontrolservice.domain.model.loan.LoanStatus;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /**
- * Модель займа.
+ * DTO займа.
  */
-@Entity
-@Getter
-@Setter
+@Data
+@SuperBuilder
 @NoArgsConstructor
-@SuperBuilder(setterPrefix = "with")
 @EqualsAndHashCode(callSuper = true)
-@Table(name = "loans")
-public final class Loan extends BaseDomainEntity {
+public final class LoanDto extends BaseDomainDto {
 
     /**
      * Наименование банка.
@@ -47,23 +42,22 @@ public final class Loan extends BaseDomainEntity {
     /**
      * Статус займа.
      */
-    @Enumerated(EnumType.STRING)
     private LoanStatus status;
 
     /**
      * Дата открытия займа.
      */
+    @JsonFormat(pattern = "dd.MM.yyyy")
     private LocalDate startDate;
 
     /**
      * Дата погашения займа.
      */
+    @JsonFormat(pattern = "dd.MM.yyyy")
     private LocalDate endDate;
 
     /**
      * Пользователь.
      */
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH,CascadeType.MERGE})
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private User user;
+    private UserDto user;
 }

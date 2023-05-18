@@ -1,28 +1,21 @@
-package ru.nskul.cadms.financialflowcontrolservice.domain.model.user;
+package ru.nskul.cadms.financialflowcontrolservice.presentation.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-import ru.nskul.cadms.financialflowcontrolservice.domain.model.BaseDomainEntity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /**
- * Модель пользователя.
+ * DTO пользователя.
  */
-@Entity
-@Getter
-@Setter
+@Data
+@SuperBuilder
 @NoArgsConstructor
-@SuperBuilder(setterPrefix = "with")
 @EqualsAndHashCode(callSuper = true)
-@Table(name = "users")
-public final class User extends BaseDomainEntity {
+public final class UserDto extends BaseDomainDto {
 
     /**
      * Имя пользователя.
@@ -45,7 +38,7 @@ public final class User extends BaseDomainEntity {
     private LocalDate birthDate;
 
     /**
-     * Дата рождения.
+     * Стаж работы.
      */
     private Integer lastWorkExperience;
 }
