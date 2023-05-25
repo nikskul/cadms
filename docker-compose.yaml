@@ -1,17 +1,17 @@
-version: '3'
+version: '3.7'
 services:
-  credit-service-dev:
+  credit-service:
     container_name: credit-service
     build:
-        context: .
+        context: ./credit-service
         dockerfile: Dockerfile
     image: credit-service:latest
     ports:
       - "8100:8100"
     depends_on:
-      - credit-db-dev
+      - credit-db
     networks:
-      - credit-network-dev
+      - credit-network
     environment:
       - SPRING_PROFILES_ACTIVE=deploy
       - CREDIT_DB_HOST=credit-db
@@ -21,16 +21,25 @@ services:
       - CREDIT_DB_PASSWORD=db_@password
       - CONTAINER_PORT=8100
 
-  credit-db-dev:
+  credit-db:
     image: 'postgres:15.3-alpine'
     container_name: credit-service-db
     ports:
       - ":5432"
     networks:
-      - credit-network-dev
+      - credit-network
     environment:
       - POSTGRES_USER=credit-db
       - POSTGRES_PASSWORD=db_@password
 
+  next-ui:
+    image: 'main-ui'
+    container_name: 'next-ui'
+    build:
+      context: ./ui/frontend/
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+
 networks:
-  credit-network-dev:
+  credit-network:
