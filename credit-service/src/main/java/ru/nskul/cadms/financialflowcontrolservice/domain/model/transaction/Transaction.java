@@ -1,48 +1,49 @@
-package ru.nskul.cadms.financialflowcontrolservice.domain.model.budget.plan;
+package ru.nskul.cadms.financialflowcontrolservice.domain.model.transaction;
 
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import ru.nskul.cadms.financialflowcontrolservice.domain.model.BaseDomainEntity;
 import ru.nskul.cadms.financialflowcontrolservice.domain.model.user.User;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.time.Instant;
 
+/**
+ * Модель транзакции.
+ */
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 @SuperBuilder(setterPrefix = "with")
 @EqualsAndHashCode(callSuper = true)
-@Table(name = "budget_plans")
-public final class BudgetPlan extends BaseDomainEntity {
+@Table(name = "transactions")
+public final class Transaction extends BaseDomainEntity {
 
     /**
-     * Название плана.
-     */
-    private String name;
-
-    /**
-     * Тип плана.
-     */
-    private BudgetPlanType planType;
-
-    /**
-     * Сумма планируемых расходов/доходов.
+     * Размер транзакции.
      */
     private BigDecimal amount;
 
     /**
-     * Сумма планируемых расходов/доходов.
+     * Тип транзакции.
      */
-    private LocalDate startDate;
+    @Enumerated(EnumType.STRING)
+    private TransactionType type;
 
     /**
-     * Сумма планируемых расходов/доходов.
+     * Дата и время транзакции.
      */
-    private LocalDate endDate;
+    private Instant transactionTimestamp;
+
+    /**
+     * Описание транзакции.
+     */
+    private String description;
 
     /**
      * Пользователь.

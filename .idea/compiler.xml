@@ -18,13 +18,16 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok-mapstruct-binding/0.2.0/lombok-mapstruct-binding-0.2.0.jar" />
         </processorPath>
-        <module name="financial-flow-control-service" />
+        <module name="credit-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cadms" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="financial-flow-control-service" options="" />
+      <module name="credit-service" options="" />
     </option>
   </component>
 </project>

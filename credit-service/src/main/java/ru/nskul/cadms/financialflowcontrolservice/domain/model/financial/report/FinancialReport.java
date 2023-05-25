@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import ru.nskul.cadms.financialflowcontrolservice.domain.model.BaseDomainEntity;
@@ -17,6 +18,7 @@ import java.time.LocalDate;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 @SuperBuilder(setterPrefix = "with")
 @EqualsAndHashCode(callSuper = true)
 @Table(name = "financial_reports")
