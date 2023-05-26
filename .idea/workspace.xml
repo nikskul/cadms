@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7e1fa0d-1832-468c-9f61-c905c1ca46bd" name="Changes" comment="Стабилизация работы в контейнере">
-      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/frontend/Dockerfile" afterDir="false" />
+    <list default="true" id="f7e1fa0d-1832-468c-9f61-c905c1ca46bd" name="Changes" comment="Добавлена контейнеризация UI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/credit-service/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/credit-service/docker-compose.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +39,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "3c812070cec9d8b4ef7405f0e5d0a764",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -59,7 +57,9 @@
       </method>
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration name="docker-compose.yaml.next-ui: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
@@ -89,7 +89,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1685044463494</updated>
-      <workItem from="1685044464545" duration="3853000" />
+      <workItem from="1685044464545" duration="4095000" />
+      <workItem from="1685132664300" duration="148000" />
     </task>
     <task id="LOCAL-00001" summary="Стабилизация работы в контейнере">
       <created>1685046130623</created>
@@ -98,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685046130623</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Добавлена контейнеризация UI">
+      <created>1685048590087</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685048590087</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +114,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Стабилизация работы в контейнере" />
-    <option name="LAST_COMMIT_MESSAGE" value="Стабилизация работы в контейнере" />
+    <MESSAGE value="Добавлена контейнеризация UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена контейнеризация UI" />
   </component>
 </project>
