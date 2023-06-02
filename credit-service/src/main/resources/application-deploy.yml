@@ -7,3 +7,7 @@ spring:
 
 server:
   port: ${CONTAINER_PORT}
+
+jwt:
+  secret: ${JWT_KEY}
+  expiration: ${EXPIRATION_TIME}

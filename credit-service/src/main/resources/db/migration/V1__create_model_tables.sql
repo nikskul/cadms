@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS users (
   id uuid PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
   email VARCHAR(100) NOT NULL UNIQUE,
---  password VARCHAR(100) NOT NULL,
+  password VARCHAR(100) NOT NULL,
   income DECIMAL(12,2) NOT NULL,
   birth_date DATE NOT NULL,
   last_work_experience INTEGER NOT NULL,

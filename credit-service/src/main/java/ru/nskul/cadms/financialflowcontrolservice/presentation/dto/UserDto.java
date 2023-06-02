@@ -15,7 +15,7 @@ import java.time.LocalDate;
 @SuperBuilder
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public final class UserDto extends BaseDomainDto {
+public class UserDto extends BaseDomainDto {
 
     /**
      * Имя пользователя.

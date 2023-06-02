@@ -33,9 +33,7 @@ public class LoanService {
     }
 
     public List<LoanDto> findByUserId(UUID id) {
-        return repository.findAllByUserId(id).stream()
-                .map(mapper::convert)
-                .toList();
+        return repository.findAllByUserId(id).stream().map(mapper::convert).toList();
     }
 
     public BaseOperationResponse create(LoanDto dto) {
@@ -44,5 +42,10 @@ public class LoanService {
             return BaseOperationResponse.failed("Не удалось сохранить займ");
         }
         return BaseOperationResponse.ok();
+    }
+
+    public LoanDto findById(UUID id) {
+        return mapper.convert(repository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Не существует займа с id: " + id)));
     }
 }

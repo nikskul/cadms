@@ -33,9 +33,10 @@ public class LoanCriteriaService {
         return BaseOperationResponse.ok();
     }
 
-    public List<LoanCriteriaDto> getAll() {
-        return repository.findAll().stream()
-                .map(mapper::convert)
-                .toList();
+    public LoanCriteriaDto getByLoanId(UUID id) {
+        return mapper.convert(
+            repository.findByLoanId(id)
+                .orElseGet(() -> createUseCase.exec(loanFetchUseCase.exec(id)))
+        );
     }
 }

@@ -12,6 +12,7 @@ import java.util.UUID;
 /**
  * API пользователей.
  */
+@CrossOrigin
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/users")

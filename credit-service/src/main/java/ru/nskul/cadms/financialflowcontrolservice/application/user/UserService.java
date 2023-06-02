@@ -18,7 +18,7 @@ public class UserService {
     private final UserMapper mapper;
 
     private final UserCreateUseCase createUseCase;
-    private final UserFetchUseCase fetchUseCase;
+    private final UserFetchUseCase<UUID> fetchByIdUseCase;
 
     public BaseOperationResponse create(UserDto userDto) {
         var saved = createUseCase.exec(userDto);
@@ -29,7 +29,7 @@ public class UserService {
     }
 
     public UserDto getById(UUID id) {
-        return mapper.convert(fetchUseCase.exec(id));
+        return mapper.convert(fetchByIdUseCase.exec(id));
     }
 
     public List<UserDto> getAll() {

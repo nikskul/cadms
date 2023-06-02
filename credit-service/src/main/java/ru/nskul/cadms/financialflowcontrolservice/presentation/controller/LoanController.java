@@ -12,6 +12,7 @@ import java.util.UUID;
 /**
  * API займов.
  */
+@CrossOrigin
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/loans")
@@ -41,7 +42,6 @@ public class LoanController {
         return loanService.evaluateLoan(id);
     }
 
-
     /**
      * Оценка займа.
      *
@@ -51,5 +51,16 @@ public class LoanController {
     @GetMapping("/user/{id}")
     public List<LoanDto> findByUserId(@PathVariable UUID id) {
         return loanService.findByUserId(id);
+    }
+
+    /**
+     * Оценка займа.
+     *
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}")
+    public LoanDto findById(@PathVariable UUID id) {
+        return loanService.findById(id);
     }
 }

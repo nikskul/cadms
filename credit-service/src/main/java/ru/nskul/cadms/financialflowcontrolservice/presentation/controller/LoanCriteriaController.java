@@ -12,6 +12,7 @@ import java.util.UUID;
 /**
  * API займов.
  */
+@CrossOrigin
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/loan-criteria")
@@ -32,10 +33,11 @@ public class LoanCriteriaController {
 
     /**
      *
+     * @param id
      * @return
      */
-    @GetMapping
-    public List<LoanCriteriaDto> getAll() {
-        return service.getAll();
+    @GetMapping("/loan/{id}")
+    public LoanCriteriaDto getByLoanId(@PathVariable UUID id) {
+        return service.getByLoanId(id);
     }
 }

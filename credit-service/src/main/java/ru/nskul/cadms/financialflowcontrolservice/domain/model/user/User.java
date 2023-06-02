@@ -35,6 +35,11 @@ public final class User extends BaseDomainEntity {
     private String email;
 
     /**
+     * Пароль.
+     */
+    private String password;
+
+    /**
      * Доходы в мес.
      */
     private BigDecimal income;

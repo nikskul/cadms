@@ -8,15 +8,7 @@ import ru.nskul.cadms.financialflowcontrolservice.domain.repository.UserReposito
 import java.util.UUID;
 
 @Component
-@RequiredArgsConstructor
-public class UserFetchUseCase {
+public interface UserFetchUseCase<T> {
 
-    private final UserRepository repository;
-
-    public User exec(UUID id) {
-        return repository.findById(id).orElseThrow(
-                // TODO: Заменить на кастомное исключение
-                () -> new RuntimeException("Не существует займа с id: " + id)
-        );
-    }
+    User exec(T value);
 }

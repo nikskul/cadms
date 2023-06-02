@@ -22,17 +22,17 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <java.version>17</java.version>
-        <spring-boot-starter.version>3.0.6</spring-boot-starter.version>
+        <spring-boot-starter.version>3.1.0</spring-boot-starter.version>
         <postgresql.version>42.5.4</postgresql.version>
         <junit-jupiter.version>5.9.2</junit-jupiter.version>
-        <flyway-core.version>9.5.1</flyway-core.version>
-        <testcontainers.version>1.17.0</testcontainers.version>
+        <flyway-core.version>9.16.0</flyway-core.version>
+        <testcontainers.version>1.17.6</testcontainers.version>
         <lombok.version>1.18.24</lombok.version>
-        <org.mapstruct.version>1.5.2.Final</org.mapstruct.version>
+        <org.mapstruct.version>1.5.3.Final</org.mapstruct.version>
         <snakeyaml.version>2.0</snakeyaml.version>
         <json-smart.version>2.4.10</json-smart.version>
         <slf4j.version>2.0.7</slf4j.version>
-        <jackson.version>2.14.2</jackson.version>
+        <jackson.version>2.15.1</jackson.version>
         <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
     </properties>
 
