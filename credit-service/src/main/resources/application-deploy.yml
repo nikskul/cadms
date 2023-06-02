@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${CREDIT_DB_HOST}:${CREDIT_DB_PORT}/${CREDIT_DB_NAME}
+    driverClassName: org.postgresql.Driver
+    username: ${CREDIT_DB_USERNAME}
+    password: ${CREDIT_DB_PASSWORD}
+
+server:
+  port: ${CONTAINER_PORT}
+
+jwt:
+  secret: ${JWT_KEY}
+  expiration: ${EXPIRATION_TIME}
