@@ -1,26 +1,29 @@
-import { Loan } from "@/app/api/users/loan";
-import { APIv1 } from "@/app/components/api";
-import Card, { Row } from "@/app/components/card/Card";
-import { LoanInfo, LoanRow } from "@/app/components/loan/loan-card";
-import { dateWithPostfix } from "@/app/components/util/util";
+"use client";
+
+import { APIv1 } from "@/components/api";
+import { Loan } from "@/components/api/users/loan";
+import Card, { Row } from "@/components/card/card";
+import { LoanInfo } from "@/components/loan/loan-card";
+import { dateWithPostfix } from "@/components/util/util";
+import { usePathname } from "next/navigation";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 
-const fetcher = (url: URL) => fetch(url).then((r) => r.json());
+const fetcher = (url) => fetch(url).then((r) => r.json());
 
-const worthinessMap = new Map<string, string>([
+const worthinessMap = new Map([
   ["SOLVENT", "Высокая"],
   ["MEDIUM", "Средняя"],
   ["INSOLVENT", "Низкая"],
 ]);
 
-const incomeLevelMap = new Map<string, string>([
+const incomeLevelMap = new Map([
   ["HIGH", "Высокий"],
   ["MEDIUM", "Средний"],
   ["SMALL", "Низкий"],
 ]);
 
-const creditRatingMap = new Map<string, string>([
+const creditRatingMap = new Map([
   ["EXCELLENT", "Отличный"],
   ["GOOD", "Высокий"],
   ["FAIR", "Нормальний"],
@@ -28,23 +31,18 @@ const creditRatingMap = new Map<string, string>([
   ["INFERIOR", "Ужасный"],
 ]);
 
-export interface Criteria {
+export type Criteria = {
   incomeLevel: string;
   creditRating: string;
   personAge: number;
   workExperience: number;
   worthiness: string;
   loan: Loan;
-}
+};
 
-export default function LoanPage() {
-  const router = useRouter();
-
-  const {
-    data: criteria,
-    error: criteriaError,
-  }: { data: Criteria; error: any } = useSWR(
-    `${APIv1}/loan-criteria/loan/${router.query.id}`,
+export default function LoanPage({ params }) {
+  const { data: criteria, error: criteriaError } = useSWR(
+    `${APIv1}/loan-criteria/loan/${params.id}`,
     fetcher
   );
 
@@ -53,15 +51,15 @@ export default function LoanPage() {
 
   let worthiness = "";
   if (worthinessMap.has(criteria.worthiness)) {
-    worthiness = worthinessMap.get(criteria.worthiness)!;
+    worthiness = worthinessMap.get(criteria.worthiness);
   }
   let creditRating = "";
   if (creditRatingMap.has(criteria.creditRating)) {
-    creditRating = creditRatingMap.get(criteria.creditRating)!;
+    creditRating = creditRatingMap.get(criteria.creditRating);
   }
   let incomeLevel = "";
   if (incomeLevelMap.has(criteria.incomeLevel)) {
-    incomeLevel = incomeLevelMap.get(criteria.incomeLevel)!;
+    incomeLevel = incomeLevelMap.get(criteria.incomeLevel);
   }
 
   const criteriaRows = [
@@ -81,8 +79,8 @@ export default function LoanPage() {
       right={incomeLevel}
     />,
     <Row
-      key={"Кредитная история:"}
-      left={"Кредитная история:"}
+      key={"Кредитный рейтинг:"}
+      left={"Кредитный рейтинг:"}
       right={creditRating}
     />,
   ];

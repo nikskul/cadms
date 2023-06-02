@@ -1,10 +1,9 @@
 package ru.nskul.cadms.financialflowcontrolservice.presentation.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import ru.nskul.cadms.financialflowcontrolservice.application.auth.AuthService;
 import ru.nskul.cadms.financialflowcontrolservice.presentation.dto.UserDto;
 import ru.nskul.cadms.financialflowcontrolservice.presentation.dto.UserWithPasswordDto;
@@ -14,9 +13,10 @@ import ru.nskul.cadms.financialflowcontrolservice.presentation.response.BaseOper
 /**
  * Контроллер аутентификации.
  */
+@CrossOrigin
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v1")
+@RequestMapping(value = "/api/v1", produces = "application/json")
 public class AuthController {
 
     private final AuthService service;
@@ -28,8 +28,12 @@ public class AuthController {
      * @return
      */
     @PostMapping("/login")
-    public UserDto login(@RequestBody LoginRequest request) {
-        return service.login(request);
+    public ResponseEntity<UserDto> login(@RequestBody LoginRequest request) {
+        var user = service.login(request);
+        if (user == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+        return ResponseEntity.ok(user);
     }
 
     /**
@@ -38,7 +42,8 @@ public class AuthController {
      * @param user
      * @return
      */
-    public BaseOperationResponse login(@RequestBody UserWithPasswordDto user) {
+    @PostMapping("/register")
+    public BaseOperationResponse register(@RequestBody UserWithPasswordDto user) {
         return service.register(user);
     }
 

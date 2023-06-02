@@ -17,6 +17,8 @@
 }
 
 .menu-item__text {
+    display: flex;
+    align-items: center;
     max-width: 9.5rem;
     width: 100%;
 }

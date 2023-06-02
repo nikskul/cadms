@@ -14,7 +14,7 @@ export default function Sidebar() {
           width={32}
           height={32}
           className="logo"
-          src="Logo.svg"
+          src="logo.svg"
           alt="Логотип ФинКонтроль"
         />
         <div className="flex flex-col ml-6">

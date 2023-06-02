@@ -1,6 +1,7 @@
 package ru.nskul.cadms.financialflowcontrolservice.presentation.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.nskul.cadms.financialflowcontrolservice.application.loan.LoanService;
 import ru.nskul.cadms.financialflowcontrolservice.presentation.dto.LoanDto;
@@ -60,7 +61,7 @@ public class LoanController {
      * @return
      */
     @GetMapping("/{id}")
-    public LoanDto findById(@PathVariable UUID id) {
-        return loanService.findById(id);
+    public ResponseEntity<LoanDto> findById(@PathVariable UUID id) {
+        return ResponseEntity.ok(loanService.findById(id));
     }
 }

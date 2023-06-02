@@ -1,10 +1,17 @@
-'use client';
+"use client";
 
-import { User } from "@/app/api/users/user";
-import Card, { Row } from "@/app/components/card/Card";
-import { currencyFormatter, dateWithPostfix } from "@/app/components/util/util";
+import { User } from "@/components/api/users/user";
+import Card, { Row } from "@/components/card/card";
+import { currencyFormatter, dateWithPostfix } from "@/components/util/util";
+import { getUser } from "@/lib/getUser";
 
-export default function UsersPage({ user }: { user: User }) {
+export default function UsersPage() {
+  const user  = JSON.parse(getUser()) as User;
+
+  if (!user) {
+    return <>Loading user page...</>
+  }
+
   const formatedDate = new Date(user.birthDate);
 
   const rows = [
@@ -37,3 +44,4 @@ export default function UsersPage({ user }: { user: User }) {
     </>
   );
 }
+
