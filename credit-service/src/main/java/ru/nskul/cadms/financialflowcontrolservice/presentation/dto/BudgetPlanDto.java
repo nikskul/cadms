@@ -37,13 +37,11 @@ public final class BudgetPlanDto extends BaseDomainDto {
     /**
      * Сумма планируемых расходов/доходов.
      */
-    @JsonFormat(pattern = "dd.MM.yyyy")
     private LocalDate startDate;
 
     /**
      * Сумма планируемых расходов/доходов.
      */
-    @JsonFormat(pattern = "dd.MM.yyyy")
     private LocalDate endDate;
 
     /**

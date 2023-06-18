@@ -2,13 +2,19 @@
 
 import { APIv1 } from "@/components/api";
 import { LoginRequest, login } from "@/lib/getUser";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function Login() {
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
 
     const data = new FormData(event.target);
 
@@ -22,28 +28,49 @@ export default function Login() {
 
     try {
       const response = await login(credentials);
-      console.log(response);
-      
       localStorage.setItem("user", JSON.stringify(response));
-
+      router.push("/");
     } catch (error) {
-      setError("User not found"); // установка сообщения об ошибке
-    }   
-
+      setError("Пользователь не найден!"); // установка сообщения об ошибке
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div className="flex m-auto w-full h-screen">
+    <div className="flex m-auto w-full min-h-screen">
       <form
         onSubmit={handleSubmit}
         action={APIv1 + "/login"}
         method="post"
-        className=" flex flex-col justify-start gap-4 max-w-lg w-full m-auto border-black "
+        className=" flex flex-col justify-start gap-4 max-w-lg w-full m-auto border-black shadow p-8
+        rounded-xl"
       >
-        {error && <p>{error}</p>} {/* отображение сообщения об ошибке */}
-        <input type="email" name="email" placeholder="email@mail.ru" />
-        <input type="password" name="password" placeholder="*******" />
-        <input type="submit" value="Send Request" />
+        <h2>Авторизация</h2>
+        {loading ? <>Загрузка</> : <></>}
+        {error && <p>{error}</p>}
+        <input
+          className="border px-2 py-1"
+          type="email"
+          name="email"
+          placeholder="email@mail.ru"
+          required
+        />
+        <input
+          className="border px-2 py-1"
+          type="password"
+          name="password"
+          placeholder="*******"
+          required
+        />
+        <Link href="/register" className="text-blue-600">
+          Регистрация
+        </Link>
+        <input
+          className="border px-2 py-1 hover:cursor-pointer hover:font-bold"
+          type="submit"
+          value="Авторизация"
+        />
       </form>
     </div>
   );

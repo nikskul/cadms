@@ -4,6 +4,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import ru.nskul.cadms.financialflowcontrolservice.domain.model.user.User;
 import ru.nskul.cadms.financialflowcontrolservice.presentation.dto.UserDto;
+import ru.nskul.cadms.financialflowcontrolservice.presentation.dto.UserWithPasswordDto;
 
 @Mapper(
         config = AuditFieldsConfigMapper.class,
@@ -26,5 +27,5 @@ public interface UserMapper {
      * @param dto    DTO пользователя
      * @return Entity пользователя
      */
-    User convert(@MappingTarget User entity, UserDto dto);
+    User convert(@MappingTarget User entity, UserWithPasswordDto dto);
 }

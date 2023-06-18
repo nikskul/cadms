@@ -5,11 +5,13 @@ import { Loan } from "@/components/api/users/loan";
 import Card, { Row } from "@/components/card/card";
 import { LoanInfo } from "@/components/loan/loan-card";
 import { dateWithPostfix } from "@/components/util/util";
-import { usePathname } from "next/navigation";
-import { useRouter } from "next/router";
-import useSWR from "swr";
+import { analyzeLoan } from "@/lib/loans";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import useSWR, { mutate } from "swr";
 
-const fetcher = (url) => fetch(url).then((r) => r.json());
+const fetcher = (url: RequestInfo | URL) => fetch(url).then((r) => r.json());
 
 const worthinessMap = new Map([
   ["SOLVENT", "Высокая"],
@@ -41,6 +43,8 @@ export type Criteria = {
 };
 
 export default function LoanPage({ params }) {
+  const [error, setError] = useState("");
+
   const { data: criteria, error: criteriaError } = useSWR(
     `${APIv1}/loan-criteria/loan/${params.id}`,
     fetcher
@@ -85,6 +89,16 @@ export default function LoanPage({ params }) {
     />,
   ];
 
+  const analyze = async (id: any) => {
+    analyzeLoan(id).then((res) => {
+      if (res.status === "OK") {
+        mutate(`${APIv1}/loan-criteria/loan/${params.id}`);
+        return;
+      }
+      setError(res.message);
+    });
+  };
+
   return (
     <div className="flex flex-col gap-6">
       <h1 className="mb-6">{criteria.loan.bankName}</h1>
@@ -94,10 +108,22 @@ export default function LoanPage({ params }) {
       <Card
         header={"Результат анализа"}
         rows={[
+          <>{error && <p>{error}</p>}</>,
           <Row
             key={"Кредитоспособность:"}
             left={"Кредитоспособность:"}
-            right={worthiness}
+            right={
+              !worthiness ? (
+                <button
+                  className="text-blue-600 hover:font-bold"
+                  onClick={() => analyze(params.id)}
+                >
+                  Определить
+                </button>
+              ) : (
+                worthiness
+              )
+            }
           />,
         ]}
       />

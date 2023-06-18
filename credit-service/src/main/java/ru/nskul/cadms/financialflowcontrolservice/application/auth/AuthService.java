@@ -6,6 +6,7 @@ import ru.nskul.cadms.financialflowcontrolservice.application.user.UserCreateUse
 import ru.nskul.cadms.financialflowcontrolservice.domain.repository.UserRepository;
 import ru.nskul.cadms.financialflowcontrolservice.infrastructure.mapper.UserMapper;
 import ru.nskul.cadms.financialflowcontrolservice.presentation.dto.UserDto;
+import ru.nskul.cadms.financialflowcontrolservice.presentation.dto.UserWithPasswordDto;
 import ru.nskul.cadms.financialflowcontrolservice.presentation.request.LoginRequest;
 import ru.nskul.cadms.financialflowcontrolservice.presentation.response.BaseOperationResponse;
 
@@ -26,7 +27,7 @@ public class AuthService {
         return mapper.convert(user.get());
     }
 
-    public BaseOperationResponse register(UserDto dto) {
+    public BaseOperationResponse register(UserWithPasswordDto dto) {
         if (repository.findByEmailIgnoreCase(dto.getEmail()).isPresent())
             return BaseOperationResponse.failed("Email already exist!");
 

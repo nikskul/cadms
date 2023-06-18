@@ -6,7 +6,7 @@ export default function Icon({ fileName }: { fileName: string }) {
             <Image
                 width={32}
                 height={32}
-                src={fileName}
+                src={"/" + fileName}
                 alt={'Иконка '.concat(fileName)}
             />
         </div>

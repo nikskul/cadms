@@ -1,6 +1,5 @@
 package ru.nskul.cadms.financialflowcontrolservice.presentation.dto;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -47,14 +46,7 @@ public final class LoanDto extends BaseDomainDto {
     /**
      * Дата открытия займа.
      */
-    @JsonFormat(pattern = "dd.MM.yyyy")
     private LocalDate startDate;
-
-    /**
-     * Дата погашения займа.
-     */
-    @JsonFormat(pattern = "dd.MM.yyyy")
-    private LocalDate endDate;
 
     /**
      * Пользователь.

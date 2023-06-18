@@ -56,11 +56,6 @@ public final class Loan extends BaseDomainEntity {
     private LocalDate startDate;
 
     /**
-     * Дата погашения займа.
-     */
-    private LocalDate endDate;
-
-    /**
      * Пользователь.
      */
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH,CascadeType.MERGE})

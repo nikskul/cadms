@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import ru.nskul.cadms.financialflowcontrolservice.domain.model.user.User;
 import ru.nskul.cadms.financialflowcontrolservice.domain.repository.UserRepository;
 import ru.nskul.cadms.financialflowcontrolservice.infrastructure.mapper.UserMapper;
-import ru.nskul.cadms.financialflowcontrolservice.presentation.dto.UserDto;
+import ru.nskul.cadms.financialflowcontrolservice.presentation.dto.UserWithPasswordDto;
 
 /**
  * Use case создания на основе DTO.
@@ -24,7 +24,7 @@ public class UserCreateUseCase {
      * @param dto DTO
      * @return модель сохраненную в бд
      */
-    public User exec(UserDto dto) {
+    public User exec(UserWithPasswordDto dto) {
         return repository.save(mapper.convert(new User(), dto));
     }
 }

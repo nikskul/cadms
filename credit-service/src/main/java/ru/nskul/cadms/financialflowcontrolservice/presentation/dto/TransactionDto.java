@@ -1,6 +1,5 @@
 package ru.nskul.cadms.financialflowcontrolservice.presentation.dto;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -8,7 +7,7 @@ import lombok.experimental.SuperBuilder;
 import ru.nskul.cadms.financialflowcontrolservice.domain.model.transaction.TransactionType;
 
 import java.math.BigDecimal;
-import java.time.Instant;
+import java.time.LocalDate;
 
 /**
  * DTO транзакции.
@@ -30,10 +29,9 @@ public final class TransactionDto extends BaseDomainDto {
     private TransactionType type;
 
     /**
-     * Дата и время транзакции.
+     * Дата транзакции.
      */
-    @JsonFormat(pattern = "dd.MM.yyyyTHH:mm:ss.SSSZ", timezone = "UTC")
-    private Instant transactionTimestamp;
+    private LocalDate date;
 
     /**
      * Описание транзакции.

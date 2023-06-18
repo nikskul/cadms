@@ -5,35 +5,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7e1fa0d-1832-468c-9f61-c905c1ca46bd" name="Changes" comment="Добавлена контейнеризация UI">
+      <change afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/application/budget/plan/BudgetPlanCreateUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/application/budget/plan/BudgetPlanService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/application/transactions/TransactionCreateUserCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/application/transactions/TransactionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/infrastructure/mapper/BudgetPlanMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/infrastructure/mapper/TransactionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/presentation/controller/BudgetPlanController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/presentation/controller/TransactionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/presentation/request/TransactionFetchParams.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/credit-service/src/main/resources/db/migration/V2__alter_table_loans.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/credit-service/src/main/resources/db/migration/V3__alter_table_budget_plans.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5a66396c-e6b7-4ed9-9743-d9099d055dd4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5a66396c-e6b7-4ed9-9743-d9099d055dd4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5a66396c-e6b7-4ed9-9743-d9099d055dd4/storage_v2/_src_/database/financial-flow-control.gupF3Q/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5a66396c-e6b7-4ed9-9743-d9099d055dd4/storage_v2/_src_/database/financial-flow-control.gupF3Q/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/presentation/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/presentation/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/presentation/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/presentation/controller/LoanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/app/api/users/loan.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/app/api/users/user.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/app/components/api.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/app/components/card/Card.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/app/components/dashboard/dashboard.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/app/components/layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/app/components/loan/loan-card.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/app/components/sidebar-with.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/app/components/sidebar/menu-icon.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/app/components/sidebar/menu-item.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/app/components/sidebar/sidebar.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/app/components/util/util.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/lib/session.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/lib/useUser.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/pages/404.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/pages/500.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/pages/_app.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/pages/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/pages/layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/pages/loans/[id].tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/pages/loans/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/pages/login/login.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/pages/register/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/pages/register/layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/src/pages/user/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/ui/frontend/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/application/auth/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/application/auth/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/application/user/UserCreateUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/application/user/UserCreateUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/application/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/application/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/domain/model/loan/Loan.java" beforeDir="false" afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/domain/model/loan/Loan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/domain/model/transaction/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/domain/model/transaction/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/domain/repository/BudgetPlanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/domain/repository/BudgetPlanRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/domain/repository/TransactionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/domain/repository/TransactionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/infrastructure/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/infrastructure/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/presentation/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/presentation/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/presentation/dto/BudgetPlanDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/presentation/dto/BudgetPlanDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/presentation/dto/LoanDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/presentation/dto/LoanDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/presentation/dto/TransactionDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/presentation/dto/TransactionDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/frontend/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui/frontend/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/frontend/src/app/loans/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui/frontend/src/app/loans/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/frontend/src/app/loans/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui/frontend/src/app/loans/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/frontend/src/app/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui/frontend/src/app/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/frontend/src/app/protected-root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui/frontend/src/app/protected-root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/frontend/src/app/register/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui/frontend/src/app/register/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/frontend/src/app/user/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui/frontend/src/app/user/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/frontend/src/components/api/users/loan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui/frontend/src/components/api/users/loan.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/frontend/src/components/card/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui/frontend/src/components/card/card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/frontend/src/components/sidebar/menu-icon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui/frontend/src/components/sidebar/menu-icon.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/frontend/src/components/sidebar/sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui/frontend/src/components/sidebar/sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/frontend/src/lib/getUser.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ui/frontend/src/lib/getUser.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/frontend/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/ui/frontend/src/styles/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +96,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;3c812070cec9d8b4ef7405f0e5d0a764&quot;,
     &quot;ts.external.directory.path&quot;: &quot;X:\\JavaProjects\\cadms\\ui\\frontend\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -97,14 +109,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="ru.nskul.cadms.financialflowcontrolservice.presentation.dto" />
-      <recent name="ru.nskul.cadms.financialflowcontrolservice.application.auth" />
+      <recent name="ru.nskul.cadms.financialflowcontrolservice.application.transactions" />
       <recent name="ru.nskul.cadms.financialflowcontrolservice.presentation.request" />
-      <recent name="ru.nskul.cadms.financialflowcontrolservice.presentation.response" />
-      <recent name="ru.nskul.cadms.financialflowcontrolservice.application.user" />
+      <recent name="ru.nskul.cadms.financialflowcontrolservice.application.budget.plan" />
+      <recent name="ru.nskul.cadms.financialflowcontrolservice.infrastructure.mapper" />
+      <recent name="ru.nskul.cadms.financialflowcontrolservice.presentation.dto" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="X:\JavaProjects\cadms" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.nskul.cadms.financialflowcontrolservice.infrastructure.mapper" />
+      <recent name="ru.nskul.cadms.financialflowcontrolservice.presentation.controller" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.FinancialFlowControlServiceApplication">
@@ -153,7 +169,15 @@
       <workItem from="1685219523567" duration="1330000" />
       <workItem from="1685266679810" duration="19707000" />
       <workItem from="1685342014035" duration="5000" />
-      <workItem from="1685698398103" duration="9293000" />
+      <workItem from="1685698398103" duration="10119000" />
+      <workItem from="1685773402390" duration="339000" />
+      <workItem from="1686307549327" duration="2562000" />
+      <workItem from="1686310638862" duration="597000" />
+      <workItem from="1686399000570" duration="12326000" />
+      <workItem from="1686473722148" duration="14478000" />
+      <workItem from="1686641873603" duration="115000" />
+      <workItem from="1686759300546" duration="5835000" />
+      <workItem from="1686769833827" duration="23000" />
     </task>
     <task id="LOCAL-00001" summary="Стабилизация работы в контейнере">
       <created>1685046130623</created>
@@ -182,20 +206,36 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="ui" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Стабилизация работы в контейнере" />
     <MESSAGE value="Добавлена контейнеризация UI" />
     <option name="LAST_COMMIT_MESSAGE" value="Добавлена контейнеризация UI" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/credit-service/src/main/java/ru/nskul/cadms/financialflowcontrolservice/presentation/controller/AuthController.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

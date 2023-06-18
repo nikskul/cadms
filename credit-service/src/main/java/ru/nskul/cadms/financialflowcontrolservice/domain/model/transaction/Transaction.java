@@ -11,6 +11,7 @@ import ru.nskul.cadms.financialflowcontrolservice.domain.model.user.User;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.time.LocalDate;
 
 /**
  * Модель транзакции.
@@ -36,9 +37,9 @@ public final class Transaction extends BaseDomainEntity {
     private TransactionType type;
 
     /**
-     * Дата и время транзакции.
+     * Дата транзакции.
      */
-    private Instant transactionTimestamp;
+    private LocalDate date;
 
     /**
      * Описание транзакции.

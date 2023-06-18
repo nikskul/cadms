@@ -8,11 +8,7 @@ export default function ProtectedRoute({
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = usePathname();
-
   const user = getUser();
-
-  console.log("User: " + user);
 
   if (!user) {
     redirect("/login");

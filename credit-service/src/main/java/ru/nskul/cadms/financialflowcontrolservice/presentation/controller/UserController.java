@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.nskul.cadms.financialflowcontrolservice.application.user.UserService;
 import ru.nskul.cadms.financialflowcontrolservice.presentation.dto.UserDto;
-import ru.nskul.cadms.financialflowcontrolservice.presentation.response.BaseOperationResponse;
 
 import java.util.List;
 import java.util.UUID;
@@ -19,11 +18,6 @@ import java.util.UUID;
 public final class UserController {
 
     private final UserService userService;
-
-    @PostMapping("/create")
-    public BaseOperationResponse createUser(@RequestBody UserDto dto) {
-        return userService.create(dto);
-    }
 
     @GetMapping("/{id}")
     public UserDto findById(@PathVariable UUID id) {

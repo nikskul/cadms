@@ -16,7 +16,6 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();
-  console.log(pathname);
 
   if (pathname === "/login" || pathname === "/register") {
     if (!getUser()) {
